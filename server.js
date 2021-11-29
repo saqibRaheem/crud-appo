@@ -3,8 +3,9 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const server = require('http');
 const app=express();
-const PORT = 3000;
+const port = process.env.PORT||3000;
 
 
 // middle ware
@@ -34,4 +35,7 @@ app.post('/user',(req,res)=>{
         users.push(newUser);
 
     }
+})
+app.listen(port,()=>{
+    console.log(`port is running on ${port}`)
 })
