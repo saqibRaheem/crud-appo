@@ -2,7 +2,7 @@
 function post(){
     let userName = document.getElementById('userName').value;
     let email = document.getElementById('email').value;
-    axios.post("localhost:3000/user",{
+    axios.post("https://crud-appo.herokuapp.com/user",{
         userNmae:userName,email:email
 
     })   
