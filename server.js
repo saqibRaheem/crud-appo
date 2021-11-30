@@ -41,7 +41,7 @@ app.get("/users",(req,res)=>{
             res.send(users)
         }
         else{
-            res.status(500).send("Error ")
+            res.status(500).send("nh smjh ara")
         }
     })
     
