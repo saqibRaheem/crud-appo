@@ -36,6 +36,16 @@ app.post('/user',(req,res)=>{
 
     }
 })
+app.get("/users",(req,res)=>{
+        if(!err){
+            res.send(users)
+        }
+        else{
+            res.status(500).send("Error ")
+        }
+    })
+    
+
 app.listen(port,()=>{
-    console.log(`port is running on ${port}`)
+    console.log(`server is running on ${port} port`)
 })

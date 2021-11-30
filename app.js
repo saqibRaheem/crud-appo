@@ -1,5 +1,6 @@
 
-function post(){
+
+function abc(){
     let userName = document.getElementById('userName').value;
     let email = document.getElementById('email').value;
     axios.post("https://crud-appo.herokuapp.com/user",{
@@ -15,5 +16,19 @@ function post(){
     .catch((error)=>{
         console.log(error);
         alert("notResponding")
+    })
+}
+function get(){
+    axios.get("https://crud-appo.herokuapp.com/users")
+    .then((response)=>{
+        console.log(response);
+        response.data.forEach((data)=> {
+            var saveDAta = `
+            <tr id="${data.userName}">
+            <td></td></tr>
+            `
+            console.log(data)
+            
+        });
     })
 }
