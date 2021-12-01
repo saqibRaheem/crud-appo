@@ -9,7 +9,7 @@ const app = express();
 // const { stringify } = require('querystring');
 const port = process.env.PORT || 3000;
 
-const dbURI = "mongodb+srv://saqib:saqib@cluster0.pvnsa.mongodb.net/saqib"
+const dbURI = "mongodb+srv://saqib:saqib@cluster0.pvnsa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 //This lline connect with databased
 mongoose.connect(dbURI);
 const CrudUser = mongoose.model('CrudUser', {
