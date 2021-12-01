@@ -6,36 +6,36 @@
 
 // const port = 'http://localhost/3000'
 const port = "https://crud-appo.herokuapp.com";
-function abc(){
+function abc() {
     let userName = document.getElementById('userName').value;
     let email = document.getElementById('email').value;
-    axios.post(port + '/user',{
-        userNmae:userName,email:email
+    axios.post(port + '/user', {
+        userName: userName,
+        email: email
 
-     
-     })
-        .then((response)=>{
+
+    })
+        .then((response) => {
             console.log(response);
             alert('successFully response')
-            document.getElementById("userName").value='';
-            document.getElementById("email").value='';
-            
+            document.getElementById("userName").value = '';
+            document.getElementById("email").value = '';
+
         })
-        .catch((error)=>{
+        .catch((error) => {
             alert("not Responding")
             console.log(error);
         })
-        
- 
-    }
- function cba(){
-        axios.get(port +'/users')
-    
-    
-    .then((response)=>{
-        console.log(response);
-        response.data.forEach((data)=> {
-            var saveDAta = `
+
+}
+function cba() {
+    axios.get(port + '/users')
+
+
+        .then((response) => {
+            console.log(response);
+            response.data.forEach((data) => {
+                var saveDAta = `
             <tr id="${data_id}">
             <td id="userName_">${data.userName}</td>
             <td id="email_">${data.email}</td>
@@ -43,19 +43,19 @@ function abc(){
             <td><button href="javascript:void(0)" onclick=delet_data("${data._id}"); id="delete">DELETE</td>
             </tr>
             `
-            document.getElementById("tblper").innerHTML += saveDAta;
-            console.log(saveDAta)
-            
-        });
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
-    .then(()=>{
-        // always exicuted
-    })
+                document.getElementById("tblper").innerHTML += saveDAta;
+                console.log(saveDAta)
+
+            });
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+        .then(() => {
+            // always exicuted
+        })
 }
-function get_record(userName_,email_,_id) {
+function get_record(userName_, email_, _id) {
     // document.getElementById('userName').value= e.userName;
     // let id = e._id;
     // let email =e.email;
@@ -100,19 +100,19 @@ function updateC(_id) {
 
         });
 }
-function delet_data(_id){
-    axios.delete('https://crud-opperation.herokuapp.com/user/'+ _id)
-    .then((response)=>{
-        console.log(response);
-        alert(response.data)
-        cba();
-    })
-    .catch((error)=>{
-        console.log(error);
-    })
-    .then(()=>{
-        console.log();
-    })
+function delet_data(_id) {
+    axios.delete('https://crud-opperation.herokuapp.com/user/' + _id)
+        .then((response) => {
+            console.log(response);
+            alert(response.data)
+            cba();
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        .then(() => {
+            console.log();
+        })
 
 }
 cba();

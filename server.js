@@ -1,4 +1,3 @@
-
 // there are all required variables 
 // const express = require('express');
 const cors = require('cors');
