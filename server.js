@@ -85,7 +85,7 @@ app.post('/user', (req, res) => {
 
 })
 
-app.put('/users/:id', (req, res) => {
+app.put('/user/:id', (req, res) => {
     let updateObj = {}
     if (req.body.userName) {
         updateObj.userName = req.body.userName
