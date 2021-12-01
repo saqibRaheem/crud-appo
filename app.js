@@ -5,11 +5,11 @@
 // const { response } = require("express");
 
 // const port = 'http://localhost/3000'
-const port = "https://crud-appo.herokuapp.com/";
+// const port = "";
 function abc() {
     let userName = document.getElementById('userName').value;
     let email = document.getElementById('email').value;
-    axios.post(port + 'user/', {
+    axios.post('https://crud-appo.herokuapp.com/user', {
         userName: userName,
         email: email
 
@@ -20,6 +20,7 @@ function abc() {
             alert('successFully response')
             document.getElementById("userName").value = '';
             document.getElementById("email").value = '';
+            cba();
 
         })
         .catch((error) => {
@@ -29,7 +30,7 @@ function abc() {
 
 }
 function cba() {
-    axios.get(port + '/users')
+    axios.get('https://crud-appo.herokuapp.com/users')
 
 
         .then((response) => {
