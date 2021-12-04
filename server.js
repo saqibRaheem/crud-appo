@@ -120,5 +120,5 @@ app.delete('/user/:id', (req, res) => {
 
 })
 app.listen(port, () => {
-    console.log(`server is running on the ${port} port`)
+    console.log(`server is running on http://localhost:${port} port`)
 })

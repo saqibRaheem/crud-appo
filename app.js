@@ -19,7 +19,7 @@ function abc() {
             alert('successFully response')
             document.getElementById("userName").value = '';
             document.getElementById("email").value = '';
-            cba();
+            // cba();
 
         })
         .catch((error) => {
@@ -115,4 +115,4 @@ function delet_data(_id) {
         })
 
 }
-cba();
+// cba();
