@@ -9,7 +9,7 @@
 function abc() {
     let userName = document.getElementById('userName').value;
     let email = document.getElementById('email').value;
-    axios.post('https://crud-appo.herokuapp.com/user', {
+    axios.post('https://new-crud-opperation.herokuapp.com/user', {
         userName: userName, email: email
 
 
@@ -29,7 +29,7 @@ function abc() {
 
 }
 function cba() {
-    axios.get('https://crud-appo.herokuapp.com/users')
+    axios.get('https://new-crud-opperation.herokuapp.com/users')
 
 
         .then((response) => {
@@ -85,7 +85,7 @@ function get_record(userName_, email_, _id) {
 function updateC(_id) {
     let userName = document.getElementById(`${_id}-userName_`).value;
     let email = document.getElementById(`${_id}-email_`).value;
-    axios.put("https://crud-opperation.herokuapp.com/user/" + id, {
+    axios.put("https://new-crud-opperation.herokuapp.com/user/" + id, {
         userName: userName,
         email: email,
     })
@@ -101,7 +101,7 @@ function updateC(_id) {
         });
 }
 function delet_data(_id) {
-    axios.delete('https://crud-opperation.herokuapp.com/user/' + _id)
+    axios.delete('https://new-crud-opperation.herokuapp.com/user/' + _id)
         .then((response) => {
             console.log(response);
             alert(response.data)
