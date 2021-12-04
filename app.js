@@ -10,8 +10,7 @@ function abc() {
     let userName = document.getElementById('userName').value;
     let email = document.getElementById('email').value;
     axios.post('https://crud-appo.herokuapp.com/user', {
-        userName: userName,
-        email: email
+        userName: userName, email: email
 
 
     })

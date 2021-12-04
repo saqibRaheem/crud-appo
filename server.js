@@ -9,12 +9,17 @@ const app = express();
 // const { stringify } = require('querystring');
 const port = process.env.PORT || 3000;
 
-const dbURI = "mongodb+srv://saqib:saqib@cluster0.wdqfa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const dbURI = "mongodb+srv://saqib:saqib@cluster0.wdqfa.mongodb.net/saqib?retryWrites=true&w=majority"
 //This lline connect with databased
-mongoose.connect(dbURI);
-const CrudUser = mongoose.model('CrudUser', {
+mongoose.connect(dbURI)
+    .then(() => {
+        console.log("connected")
+    }).catch((err) => {
+        console.log(err)
+    });
+const CrudUser = mongoose.model('Cruduser', {
     userName: String,
-    email: String,
+    email: String
 
 })
 // middle ware
@@ -115,5 +120,5 @@ app.delete('/user/:id', (req, res) => {
 
 })
 app.listen(port, () => {
-    console.log(`server is running on ${port} port`)
+    console.log(`server is running on the ${port} port`)
 })
