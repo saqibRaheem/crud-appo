@@ -15,7 +15,7 @@ function abc() {
         userName: userName, email: email
         
 
-    })({withCredentials:true})
+    },{withCredentials:true})
         .then((response) => {
             console.log(response);
             alert('successFully response')
@@ -32,7 +32,7 @@ function abc() {
     }
 function cba() {
     axios.get(port +'/users')
-    ({withCredentials:true})
+   
 
 
         .then((response) => {
@@ -92,7 +92,7 @@ function updateC(_id) {
     axios.put(port+"/user/" + _id, {
         userName: userName,
         email: email,
-    })({withCredentials:true})
+    })
         .then((response) => {
             alert("user updated");
             console.log(response)
@@ -106,7 +106,7 @@ function updateC(_id) {
 }
 function delet_data(_id) {
     axios.delete(port+'/user/' + _id)
-    ({withCredentials:true})
+   
         .then((response) => {
             console.log(response);
             alert(response.data)
