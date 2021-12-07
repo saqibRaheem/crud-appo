@@ -25,7 +25,7 @@ const CrudUser = mongoose.model('Cruduser', {
 // middle ware
 // const port = 'http://localhost/3000' || "https://new-crud-opperation.herokuapp.com"
 // "
-app.use(cors({"Access-Control-Allow-Origin":"*"}));
+app.use(cors({"Access-Control-Allow-Origin":"https://saqibraheem.github.io"}));
 app.use(morgan());
 app.use(express.json());
 
@@ -34,7 +34,7 @@ app.use(express.json());
 // let users=[];
 
 app.use((req, res, next) => {
-    console.log('my first server', req.body);
+    console.log('starting server', req.body);
     next();
 
 })
