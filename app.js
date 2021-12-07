@@ -4,13 +4,13 @@
 // const { default: axios } = require("axios");
 // const { response } = require("express");
 // || "https://new-crud-opperation.herokuapp.com"
-const port = 'http://localhost:3000' || "https://new-crud-opperation.herokuapp.com";
+const port = 'https://new-crud-opperation.herokuapp.com' || 'http://localhost:3000' ;
 // const port = "";
 
 function abc() {
     let userName = document.getElementById('userName').value;
     let email = document.getElementById('email').value;
-const port = 'http://localhost:3000' 
+    const port = 'http://localhost:3000' 
     axios.post(port+'/user', {
         userName: userName, email: email
 
@@ -31,7 +31,7 @@ const port = 'http://localhost:3000'
         
     }
 function cba() {
-    axios.get(port+'/users')
+    axios.get(port +'/users')
 
 
         .then((response) => {
