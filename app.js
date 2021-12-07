@@ -3,13 +3,15 @@
 
 // const { default: axios } = require("axios");
 // const { response } = require("express");
-
-// const port = 'http://localhost/3000'
+// || "https://new-crud-opperation.herokuapp.com"
+const port = 'http://localhost:3000' || "https://new-crud-opperation.herokuapp.com";
 // const port = "";
+
 function abc() {
     let userName = document.getElementById('userName').value;
     let email = document.getElementById('email').value;
-    axios.post('https://new-crud-opperation.herokuapp.com/user', {
+const port = 'http://localhost:3000' 
+    axios.post(port+'/user', {
         userName: userName, email: email
 
 
@@ -19,28 +21,29 @@ function abc() {
             alert('successFully response')
             document.getElementById("userName").value = '';
             document.getElementById("email").value = '';
-            // cba();
-
+            cba();
+            
         })
         .catch((error) => {
             alert("not Responding")
             console.log(error);
         })
-
-}
+        
+    }
 function cba() {
-    axios.get('https://new-crud-opperation.herokuapp.com/users')
+    axios.get(port+'/users')
 
 
         .then((response) => {
             console.log(response);
+            document.getElementById("tblper").innerHTML = " "
             response.data.forEach((data) => {
                 var saveDAta = `
-            <tr id="${data_id}">
+            <tr id="${data._id}">
             <td id="userName_">${data.userName}</td>
             <td id="email_">${data.email}</td>
-            <td><button href="javascript:void(0)" onclick=get_record("${data.userName}","${data.email}","${data._id}");id="edit">EDIT</td>
-            <td><button href="javascript:void(0)" onclick=delet_data("${data._id}"); id="delete">DELETE</td>
+            <td><button href="javascript:void(0)" onclick=get_record("${data.userName}","${data.email}","${data._id}");id="edit">EDIT</button></td>
+            <td><button href="javascript:void(0)" onclick=delet_data("${data._id}"); id="delete">DELETE</button></td>
             </tr>
             `
                 document.getElementById("tblper").innerHTML += saveDAta;
@@ -74,7 +77,7 @@ function get_record(userName_, email_, _id) {
             <td><input type="text" id="${_id}-userName_" value="${userName_}" /></td>
             <td><input type="text" id="${_id}-email_" value="${email_}" /></td>
             <button type="button" onclick="updateC('${_id}')" class="btn btn-success">Update</button>
-        </tr>`;
+        </tr>`
 
     // document.getElementById('userName').value = userName_;
     // document.getElementById('email').value = email_;
@@ -85,7 +88,7 @@ function get_record(userName_, email_, _id) {
 function updateC(_id) {
     let userName = document.getElementById(`${_id}-userName_`).value;
     let email = document.getElementById(`${_id}-email_`).value;
-    axios.put("https://new-crud-opperation.herokuapp.com/user/" + id, {
+    axios.put(port+"/user/" + _id, {
         userName: userName,
         email: email,
     })
@@ -101,7 +104,7 @@ function updateC(_id) {
         });
 }
 function delet_data(_id) {
-    axios.delete('https://new-crud-opperation.herokuapp.com/user/' + _id)
+    axios.delete(port+'/user/' + _id)
         .then((response) => {
             console.log(response);
             alert(response.data)
@@ -115,4 +118,4 @@ function delet_data(_id) {
         })
 
 }
-// cba();
+cba();
