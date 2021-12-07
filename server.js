@@ -37,8 +37,8 @@ app.use(express.json());
 // let users=[];
 
 app.use((req, res, next) => {
-// res.header("Access-Control-Allow-Origin", "https://saqibraheem.github.io/new-crud-opperation"); // update to match the domain you will make the request from
-// res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
     console.log('starting server', req.body);
     next();
