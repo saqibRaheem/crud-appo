@@ -10,7 +10,7 @@ const port = 'https://new-crud-opperation.herokuapp.com' || 'http://localhost:30
 function abc() {
     let userName = document.getElementById('userName').value;
     let email = document.getElementById('email').value;
-    const port = 'http://localhost:3000' 
+    // const port = 'http://localhost:3000' 
     axios.post(port+'/user', {
         userName: userName, email: email
 
