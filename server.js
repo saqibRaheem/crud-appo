@@ -27,7 +27,7 @@ const CrudUser = mongoose.model('Cruduser', {
 // "
 app.use(cors({
     origin:"*",
-    credentials:true,
+    withCredentials:true,
 }));
 app.use(morgan());
 app.use(express.json());
