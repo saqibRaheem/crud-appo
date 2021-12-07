@@ -4,7 +4,7 @@
 // const { default: axios } = require("axios");
 // const { response } = require("express");
 // || "https://new-crud-opperation.herokuapp.com"
-const port = 'https://new-crud-opperation.herokuapp.com' || 'http://localhost:3000' ;
+const port = 'http://corscript.herokuapp.com/https://new-crud-opperation.herokuapp.com' || 'http://localhost:3000' ;
 // const port = "";
 
 function abc() {
